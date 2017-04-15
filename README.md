@@ -22,7 +22,7 @@ The MongoDB environment consists of the following docker containers
 
 ### Check out the repository
 
-    git clone git@github.com:reisdebora/mongodatamodels.git
+    git clone https://github.com/reisdebora/mongodatamodels.git
     cd mongodatamodels
 
 
