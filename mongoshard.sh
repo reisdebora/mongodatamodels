@@ -82,7 +82,7 @@ mkdir_init(){
 	for d in ${dirs[@]}; do
 	  echo "Creating data/$d"
 	  sudo rm -rf data/$d
-	  mkdir data/$d
+	  mkdir data/$d -p
 	  #touch data/$d/.gitkeep
 	done
 }
