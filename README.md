@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # mongodatamodels
 
 ## Building The Enviroment
@@ -100,4 +99,3 @@ Data is stored at `./data/` and is excluded from version control. Data will be p
  - [Docker](https://github.com/dotcloud/docker/)
  - [Mongo docker-compose](https://github.com/singram/mongo-docker-compose)
  - [Mongo Cluster Docker](https://github.com/senssei/mongo-cluster-docker)
->>>>>>> 55053f2f178e5100d5651ee8683331ff0577603a
