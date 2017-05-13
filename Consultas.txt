@@ -1,0 +1,75 @@
+﻿--Quantos estudantes foram financiados pelo Banco do Brasil e quantos foram financiados pela Caixa Econômica?
+EMBEDDED
+db.fies.count({"financiamento.CO_AGENTE_FINANCEIRO":1}) --Banco do Brasil
+db.fies.count({"financiamento.CO_AGENTE_FINANCEIRO":2}) --Caixa Econômica Federal
+
+REFERENCES
+db.financiamento.count({CO_AGENTE_FINANCEIRO:1}) --Banco do Brasil
+db.financiamento.count({CO_AGENTE_FINANCEIRO:2}) --Caixa Econômica Federal
+
+Híbrido
+--Quantos estudantes foram financiados pelo Banco do Brasil e quantos foram financiados pela Caixa Econômica?
+db.fies.count({"financiamento.CO_AGENTE_FINANCEIRO":1}) --Banco do Brasil
+db.fies.count({"financiamento.CO_AGENTE_FINANCEIRO":2}) --Caixa Econômica Federal
+
+
+--Quantos estudantes possuem necessidades especiais?
+EMBEDDED
+db.fies.count({"estudante.ST_DEFICIENCIA":"S"})
+
+REFERENCES
+db.estudante.count({ST_DEFICIENCIA:"S"})
+
+Híbrido
+db.fies.count({ST_DEFICIENCIA:"S"})
+
+
+--Quantos estudantes cursaram o ensino médio em Escola Pública?
+EMBEDDED
+db.fies.count({"estudante.ST_ENSINO_MEDIO_ESCOLA_PUBLICA":"S"})
+
+REFERENCES
+db.estudante.count({ST_ENSINO_MEDIO_ESCOLA_PUBLICA:"S"})
+
+Híbrido
+db.fies.count({ST_ENSINO_MEDIO_ESCOLA_PUBLICA:"S"})
+
+
+--Quantos estudantes são do sexo feminino e masculino?
+EMBEDDED
+db.fies.count({"estudante.SG_SEXO":"F"}) --feminino
+db.fies.count({"estudante.SG_SEXO":"M"}) --masculino
+
+
+REFERENCES
+db.estudante.count({SG_SEXO:"M"}) --feminino
+db.estudante.count({SG_SEXO:"F"}) --masculino
+
+Híbrido
+db.fies.count({SG_SEXO:"F"}) --feminino
+db.fies.count({SG_SEXO:"M"}) --masculino
+
+
+--Quantos estudantes são solteiros e quantos são casados?
+EMBEDDED
+db.fies.count({"estudante.CO_ESTADO_CIVIL":1}) --solteiro
+db.fies.count({"estudante.CO_ESTADO_CIVIL":2}) --casado
+
+REFERENCES
+db.estudante.count({CO_ESTADO_CIVIL:1}) --solteiro
+db.estudante.count({CO_ESTADO_CIVIL:2}) --casado
+
+Híbrido
+db.fies.count({CO_ESTADO_CIVIL:1}) --solteiro
+db.fies.count({CO_ESTADO_CIVIL:2}) --casado
+
+
+--Pesquisar pela string "Direito"
+EMBEDDED
+db.financiamento.find({"DS_CURSO":"Direito"});
+
+REFERENCES
+db.financiamento.find({"DS_CURSO":"Direito"});
+
+HÍBRIDO
+db.financiamento.find({"DS_CURSO":"Direito"});
